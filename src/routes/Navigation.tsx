@@ -15,13 +15,16 @@ export const Navigation = () => {
                     <img src={ logo } alt="React Logo"/>
                     <ul>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink
+                                className={ ({ isActive }) => isActive ? 'nav-active' : '' } 
+                                to="/"
+                            >Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about">About</NavLink>
+                            <NavLink className={ ({ isActive }) => isActive ? 'nav-active' : '' } to="/about">About</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/users">Users</NavLink>
+                            <NavLink className={ ({ isActive }) => isActive ? 'nav-active' : '' } to="/users">Users</NavLink>
                         </li>
                     </ul>
                 </nav>
