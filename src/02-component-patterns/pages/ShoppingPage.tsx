@@ -1,4 +1,11 @@
-import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components';
+import { 
+  ProductCard, 
+  ProductImage, 
+  ProductTitle, 
+  ProductButtons 
+} from '../components';
+
+import'../styles/custom-styles.css'
 
 const product = {
   id: '1',
@@ -17,16 +24,33 @@ export const ShoppingPage = () => (
       }}
     >
       {/* Diferentes maneras de enviar el componente primer patron */}
-      <ProductCard product={product}>
-        <ProductCard.Image />
-        <ProductCard.Title title={'Off Coffee'} />
-        <ProductCard.Buttons />
+      <ProductCard product={product} className='bg-dark text-white'>
+        <ProductCard.Image className='custom-image'/>
+        <ProductCard.Title title={'Off Coffee'} className="text-bold" />
+        <ProductCard.Buttons className='custom-buttons' />
       </ProductCard>
       {/* Segundo Patron */}
-      <ProductCard product={product}>
+      <ProductCard 
+        product={product}
+        className='bg-dark text-white' 
+      >
+        <ProductImage className='custom-image'/>
+        <ProductTitle className="text-white text-bold" />
+        <ProductButtons className='custom-buttons' />
+      </ProductCard>
+
+      <ProductCard 
+        product={product}
+        style={{
+          backgroundColor: '#70D1F8'
+        }}
+      >
         <ProductImage />
-        <ProductTitle />
-        <ProductButtons  />
+        <ProductTitle 
+          title='Coffe Mug-Style' 
+          style={{display:'flex', justifyContent:'center', fontWeight:'bold'}}
+        />
+        <ProductButtons style={{display:'flex', justifyContent:'center'}}/>
       </ProductCard>
     </div>
   </div>
