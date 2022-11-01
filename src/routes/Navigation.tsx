@@ -30,9 +30,9 @@ export const Navigation = () => {
                 </nav>
 
                 <Routes>
-                        <Route path="about" element={<h1>HolA</h1>} />
-                        <Route path="users" element={<h1>HolAS</h1>} />
-                        <Route path="/" element={<h1>HolASS</h1>} />
+                        <Route path="about" element={<h1>About</h1>} />
+                        <Route path="users" element={<h1>Users</h1>} />
+                        <Route path="/" element={<h1>Home</h1>} />
                     
                 </Routes>
                 
