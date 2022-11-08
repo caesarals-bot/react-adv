@@ -1,16 +1,17 @@
 
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
+    Routes,
     Route,
     NavLink
-  } from 'react-router-dom';
-import { RegisterPage } from "../03-forms/pages/RegisterPage";
+  } from "react-router-dom";
 
   import logo from '../logo.svg';
+import { RegisterPage } from '../03-forms/pages/RegisterPage';
 
 export const Navigation = () => {
     return (
-        <Router>
+        <BrowserRouter>
             <div className="main-layout">
                 <nav>
                     <img src={ logo } alt="React Logo"/>
@@ -18,11 +19,11 @@ export const Navigation = () => {
                         <li>
                             <NavLink
                                 className={ ({ isActive }) => isActive ? 'nav-active' : '' } 
-                                to="/register"
-                            >Register Page</NavLink>
+                                to="register"
+                            >Register</NavLink>
                         </li>
                         <li>
-                            <NavLink className={ ({ isActive }) => isActive ? 'nav-active' : '' } to="/about">About</NavLink>
+                            <NavLink className={ ({ isActive }) => isActive ? 'nav-active' : '' } to="/">Inicio</NavLink>
                         </li>
                         <li>
                             <NavLink className={ ({ isActive }) => isActive ? 'nav-active' : '' } to="/users">Users</NavLink>
@@ -30,15 +31,14 @@ export const Navigation = () => {
                     </ul>
                 </nav>
 
-               
-                        <Route path="/register" element={<RegisterPage />}/> 
-                            
-                        <Route path="users" element={<h1>Users</h1>} />
-                        <Route path="/" element={<h1>Home</h1>} />
+                <Routes>
+                        <Route path="/register" element={<RegisterPage />} />
+                        <Route path="users" element={<h1>HolAS</h1>} />
+                        <Route path="/" element={<h1>Inicio</h1>} />
                     
-                
+                </Routes>
                 
             </div>
-        </Router>
+        </BrowserRouter>
     )
 }
