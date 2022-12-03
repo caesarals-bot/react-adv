@@ -8,7 +8,8 @@ import {
 
 import logo from '../logo.svg';
 
-import { FormikAbstractation, FormikBasicPage, FormikComponents, FormikYupPage, RegisterPage } from "../03-forms/pages";
+import { FormikAbstractation, FormikBasicPage, FormikComponents, FormikYupPage, RegisterPage, RegisterFormikPage, DynamicForm} from "../03-forms/pages";
+
 export const Navigation = () => {
     return (
         <BrowserRouter>
@@ -35,6 +36,12 @@ export const Navigation = () => {
                             <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/formik-abstractation">Formik Abstractation</NavLink>
                         </li>
                         <li>
+                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/register-formik">Register Formik Page</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/dynamic-form">Dynamic Form</NavLink>
+                        </li>
+                        <li>
                             <NavLink className={({ isActive }) => isActive ? 'nav-active' : ''} to="/users">Users</NavLink>
                         </li>
                     </ul>
@@ -46,6 +53,8 @@ export const Navigation = () => {
                     <Route path="/formik-yup" element={<FormikYupPage />} />
                     <Route path="/formik-components" element={<FormikComponents />} />
                     <Route path="/formik-abstractation" element={<FormikAbstractation />} />
+                    <Route path="/register-formik" element={<RegisterFormikPage />} />
+                    <Route path="/dynamic-form" element={<DynamicForm />} />
                     <Route path="users" element={<h1>HolAS</h1>} />
 
                 </Routes>

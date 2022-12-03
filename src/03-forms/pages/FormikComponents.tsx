@@ -2,12 +2,6 @@ import {  Formik, Field, Form, ErrorMessage } from "formik"
 
 import * as Yup from 'yup'
 
-interface FormValues {
-    firstName: string;
-    lastName: string;
-    email: string;
-}
-
 export const FormikComponents = () => {
 
     return (
